@@ -1,0 +1,23 @@
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mssql_server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Mugi@8965
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - /Users/samuelmugi/AgileDev/dbs-data/mssql:/var/opt/mssql
+      - /Users/samuelmugi/AgileDev/dbs-data/mssql/init-db:/docker-entrypoint-initdb.d
+    networks:
+      - mssql_network
+
+volumes:
+  mssql_data:
+
+networks:
+  mssql_network:
+

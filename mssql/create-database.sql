@@ -1,0 +1,2 @@
+CREATE DATABASE [TMRC_Credit_Portal_Dev];
+GO
